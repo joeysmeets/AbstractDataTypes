@@ -1,14 +1,14 @@
 public class JulianDate extends JulianDateAbstract {
 			
 			//class & instance variables
-			private int year;
-			private int month;
-			private int day;
-			private int hours;
-			private int minutes;
-			private int seconds;
-			private double julianDate;
-			private double julianDateNumber;
+			protected int year;
+			protected int month;
+			protected int day;
+			protected int hours;
+			protected int minutes;
+			protected int seconds;
+			protected double julianDate;
+			protected double julianDateNumber;
 //			private static final LocalDateTime START_DATE = LocalDateTime.of(-4712,1,1,12,0,0,0);
 //			private JulianFields;
 			
@@ -28,21 +28,12 @@ public class JulianDate extends JulianDateAbstract {
 			public JulianDate(int year, int month, int day) {
 				this.year = year;
 				this.month = month;
-				this.day = day;
+				this.day = day; 
 				hours = 12;
 				minutes = 00;
 				seconds = 00;	
 				julianDate = generateJulianDate(year, month, day, hours, minutes, seconds);
 				julianDateNumber = generateJulianDateNumber(year, month, day);
-			}
-			
-			//main method
-			public void main(String[] args) {		
-				JulianDate julianDate1 = new JulianDate(2021, 5, 20, 12, 44, 3);
-				System.out.println(julianDate1.getJulianDate());
-//				System.out.println(julianDate1.getTomorrow(julianDate1));
-//				System.out.println(julianDate1.getYesterday(julianDate1));
-				
 			}
 			
 			
