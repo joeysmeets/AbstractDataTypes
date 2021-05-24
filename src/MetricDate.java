@@ -25,15 +25,15 @@ public class MetricDate extends JulianDate {
 	
 	public MetricDate(int year, int month, int weeks, int day) {
 		super(year, month, day);
-		metricYears = year;
+		metricYears = year; 
 		metricMonths = month;
 		metricWeeks = weeks;
 		metricDays = day;
-		metricString = generateMetricString(year, month, weeks, day);
+		metricString = generateMetricString();
 	}
 	
-	public String generateMetricString(int year, int month, int week, int day) {
-		return "Years: " + metricYears + "Months: " + metricMonths + "Weeks: " + metricWeeks + "Days: " + metricDays;
+	public String generateMetricString() {
+		return "Years: " + metricYears + " Months: " + metricMonths + " Weeks: " + metricWeeks + " Days: " + metricDays;
 	}
 		
 //		float yNow = (float)(TODAY.getYear()* 365.25)/1000;
@@ -45,22 +45,14 @@ public class MetricDate extends JulianDate {
 		metricMonths = (int)     (((julianDate/1000)-metricYears)*10);
 		metricWeeks =  (int)   (((((julianDate/1000)-metricYears)*10)-metricMonths)*10);
 		metricDays =   (int) (((((((julianDate/1000)-metricYears)*10)-metricMonths)*10)-metricWeeks)*10);
-		return generateMetricString(metricYears, metricMonths, metricWeeks, metricDays);
+		return generateMetricString();
 	}
 	
 	public double metricToJulian(int day, int week, int month, int year) {
 		this.year = 1000*year; 
 		this.month = 100*month;
 		this.day = (10*week)+day;
-		while(this.day > 31) {
-			this.day = this.day - 31;
-			month ++;
-			if(month > 12) {
-				year ++;
-				month = 1;
-			}
-		}
-		julianDate = generateJulianDate(this.year, this.month, this.day, hours, minutes, seconds);
+		julianDate = this.year + this.month + this.day;
 		return julianDate;
 	}
 	

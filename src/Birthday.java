@@ -35,24 +35,24 @@ public class Birthday extends JulianDate {
 		Birthday birthday = new Birthday(year, month, day);
 		birthdayLDT = getBirthdayLDT(birthday);
 		System.out.println("Right now it is " + TODAY.toString());
-		if (BirthdayChecker(birthday) == true) {
+		if (birthdayChecker(birthday) == true) { 
 			System.out.println("Happy birthday <3");
-			System.out.println("Your were born on a " + birthday.getWeekdayString(birthdayLDT));
-			System.out.println("You have already lived " + birthday.DaysLived(birthday));
+			System.out.println("You were born on a " + birthday.getWeekdayString(birthdayLDT));
+			System.out.println("You have already lived " + birthday.daysLived(birthday) + " days");
 			if (daysLived % 100 == 0) {
 				System.out.println("It has been a certain amount of exactly 100 days since you were born");
 			}
 		} else {
 			System.out.println("You have to wait a little longer for your birthday to come");
-			System.out.println("Your were born on a " + birthday.getWeekdayString(birthdayLDT));
-			System.out.println("You have already lived " + birthday.DaysLived(birthday));
+			System.out.println("You were born on a " + birthday.getWeekdayString(birthdayLDT));
+			System.out.println("You have already lived " + birthday.daysLived(birthday) + " days");
 			if (daysLived % 100 == 0) {
 				System.out.println("It has been a certain amount of exactly 100 days since you were born");
 			}
 		}
 	}
 
-	public boolean BirthdayChecker(Birthday birthday) {
+	public boolean birthdayChecker(Birthday birthday) {
 		if (TODAY.getMonthValue() == super.getMonth() && 
 			TODAY.getDayOfMonth() == super.getDay()) {
 			return true;
@@ -61,7 +61,7 @@ public class Birthday extends JulianDate {
 		}
 	}
 	
-	public long DaysLived(Birthday birthday) {
+	public long daysLived(Birthday birthday) {
 		LocalDateTime dateOfBirth = LocalDateTime.of(super.getYear(), super.getMonth(), super.getDay(), 0, 0);
 		daysLived = dateOfBirth.until(TODAY, ChronoUnit.DAYS);
 		return daysLived;
