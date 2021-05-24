@@ -1,6 +1,3 @@
-import java.time.LocalDateTime;
-import java.time.temporal.JulianFields;
-
 public abstract class JulianDateAbstract {
 	
 	//Pre lab 1: methods the Julian Date Class should have:
@@ -11,9 +8,10 @@ public abstract class JulianDateAbstract {
 	public abstract int getMinutes();
 	public abstract int getSeconds();
 	public abstract double getJulianDate();
-	public abstract double generateJulianDate(int year, int month, int date, int hours, int minutes, int seconds);
-	public abstract double generateJulianDateNumber(int year, int month, int date);
+	public abstract double getJulianDateNumber();
+	public abstract double generateJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
+	public abstract double generateJulianDateNumber(int year, int month, int day);
 	public abstract double getTomorrow(JulianDate julianDate);
 	public abstract double getYesterday(JulianDate julianDate);
-	public abstract int daysBetween(JulianDate dateOne, JulianDate dateTwo);
+//	public abstract int daysBetween(JulianDate dateOne, JulianDate dateTwo);
 }

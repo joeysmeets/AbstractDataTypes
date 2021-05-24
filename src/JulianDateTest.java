@@ -1,21 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class JulianDateTest {
-	private JulianDate j;
-	private JulianDate k;
-	
-	@BeforeAll
-	static void setUp() throws Exception {
-		JulianDate j = new JulianDate(1997, 7, 13, 14, 50, 30);
-		JulianDate k = new JulianDate(1997, 12, 24, 14, 50, 30);
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
 
 	//Test Getters
 	@Test
@@ -54,16 +40,19 @@ class JulianDateTest {
 		int outputSeconds = j.getSeconds();
 		assertEquals(30, outputSeconds);	
 	}
-}
-		
-		//TestTomorrow
-		//double outputTomorrow = j.getTomorrow(j);
-		//assertEquals(j = j.get outputTomorrow); //day of j plus 1
-		
-		
-		
-		//TestYesterday
-		
-		
-		//TestDaysBetween
 	
+	public void test7() {
+		JulianDate k = new JulianDate(1997, 12, 24, 14, 50, 30);
+		assertEquals(k.getJulianDate(), 2450807.11840);
+	}
+	
+	public void test8() {
+		JulianDate k = new JulianDate(1997, 12, 24, 14, 50, 30);
+		assertEquals(k.getTomorrow(k), 2450808.11840);
+	}
+	
+	public void test9() {
+		JulianDate k = new JulianDate(1997, 12, 24, 14, 50, 30);
+		assertEquals(k.getYesterday(k), 2450806.11840);
+	}
+}

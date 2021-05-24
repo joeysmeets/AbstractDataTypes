@@ -5,6 +5,11 @@
  */
 public class MetricDate extends JulianDate {
 
+	public MetricDate(int year, int month, int day, int hours, int minutes, int seconds) {
+		super(year, month, day, hours, minutes, seconds);
+		// TODO Auto-generated constructor stub
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
